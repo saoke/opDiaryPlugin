@@ -1,0 +1,30 @@
+#diary api routing
+diary_index:
+  url: /diary/search.json
+  param: { module: diary, action: search, sf_format: json }
+  requirements: { sf_method: [get] }
+
+diary_post:
+  url: /diary/post.json
+  param: { module: diary, action: post, sf_format: json }
+  requirements: { sf_method: [post] }
+
+diary_delete:
+  url: /diary/delete.json
+  param: { module: diary, action: delete, sf_format: json }
+  requirements: { sf_method: [post] }
+
+diary_comment_post:
+  url: /diary_comment/post.json
+  param: { module: diaryComment, action: post, sf_format: json }
+  requirements: { sf_method: [post] }
+
+diary_comment_delete:
+  url: /diary_comment/delete.json
+  param: { module: diaryComment, action: delete, sf_format: json }
+  requirements: { sf_method: [post] }
+
+diary_comment_search:
+  url: /diary_comment/search.json
+  param: { module: diaryComment, action: search, sf_format: json }
+  requirements: { sf_method: [get] }

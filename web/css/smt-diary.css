@@ -1,0 +1,44 @@
+#loading {
+  margin: 10px;
+}
+
+.readmore {
+  float:right;
+}
+
+.entry {
+  border-bottom: 1px solid silver;
+  padding: 5px 0px;
+}
+
+.title {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+#show .images a {
+  display: block;
+  margin: 5px;
+}
+
+#show .siblings {
+  margin-bottom: 5px;
+}
+
+#show #comments {
+  background-color: #ddd;
+}
+
+#show #commentForm {
+  background-color: #ddd;
+  padding-top: 3px;
+  margin-bottom: 5px;
+}
+
+#show #comments .row {
+  margin-top: 3px;
+}
+
+#successMessage {
+  margin-bottom: 20px;
+}

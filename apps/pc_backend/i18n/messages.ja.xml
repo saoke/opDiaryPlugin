@@ -1,0 +1,67 @@
+<?xml version="1.0" ?>
+<xliff version="1.0">
+  <file orginal="global" source-language="en" datatype="plaintext">
+    <body>
+      <trans-unit id="">
+        <source>Diary Plugin Configuration</source>
+        <target>日記プラグイン設定</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Use email post</source>
+        <target>メール投稿使用設定</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Use</source>
+        <target>使用する</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Not use</source>
+        <target>使用しない</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>If this is used, "Post via E-mail" link is shown on the mobile pages.</source>
+        <target>使用するに設定した場合、携帯の画面に「メール投稿」のリンクを表示します。</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Update activity</source>
+        <target>アクティビティ更新設定</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>If this is used, activity message is updated automatically by posting a diary. To show the activity list, see "Appearance" > "ガジェット設定".</source>
+        <target>使用するに設定した場合、日記が投稿された際にアクティビティが自動更新されます。アクティビティリストの表示設定は、「デザイン設定」>「ガジェット設定」から行ってください。</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Search enable</source>
+        <target>検索有効設定</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Search period enable</source>
+        <target>検索対象期間有効設定</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Search period</source>
+        <target>検索対象期間</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>If this is used, diary search is enabled.</source>
+        <target>使用するに設定した場合、日記を検索できるようになります。</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>If this is used, diary search is enabled only within the days set.</source>
+        <target>使用するに設定した場合、設定された日数以内の日記だけを検索します。</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Please input the number of days that reflects to the diary search.</source>
+        <target>検索に反映する日数を入力してください。</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Use open diary</source>
+        <target>Web全体に公開機能使用設定</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>If this is used, members can select the "All Users on the Web" public flag. If not used, anonymous users can't view any diary pages.</source>
+        <target>使用するに設定した場合、メンバーは「Web全体に公開」の日記を作成することができます。使用しないに設定した場合、すべての日記関連ページに非ログイン状態ではアクセスできないようになります。</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
