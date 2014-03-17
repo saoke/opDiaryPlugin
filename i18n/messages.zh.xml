@@ -1,0 +1,315 @@
+<?xml version="1.0" ?>
+<xliff version="1.0">
+  <file orginal="global" source-language="en" datatype="plaintext">
+    <body>
+      <trans-unit id="">
+        <source>Title</source>
+        <target>标题</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Body</source>
+        <target>正文</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Created at</source>
+        <target>创建日期</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Public</source>
+        <target>所有人公开</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Post a diary</source>
+        <target>写日记</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Edit the diary</source>
+        <target>编辑日记</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Edit this diary</source>
+        <target>编辑日记</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Delete this diary</source>
+        <target>删除日记</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Recently Posted Diaries</source>
+        <target>最新日记</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Recently Posted Diaries of %my_friend%</source>
+        <target>%my_friend%的最新日记</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Diaries of %my_friend%</source>
+        <target>%my_friend%的日记列表</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Diaries of %1%</source>
+        <target>关于%1%的日记</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Diary of %1%</source>
+        <target>关于%1%的日记</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>There are no diaries.</source>
+        <target>没有日记。</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>View this diary</source>
+        <target>显示详情</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>More</source>
+        <target>更多</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Save</source>
+        <target>保存</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Photo 1</source>
+        <target>图片1</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Photo 2</source>
+        <target>图片2</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Photo 3</source>
+        <target>图片3</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Required.</source>
+        <target>必填。</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Comments</source>
+        <target>评论</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Post a diary comment</source>
+        <target>写日记评论</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Public flag</source>
+        <target>公开范围</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>The diary was deleted successfully.</source>
+        <target>日记删除成功。</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>[1]1 diary has new comments|(1,Inf]%1% diaries have new comments</source>
+        <target>[1,Inf]%1%有新的评论</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>View %1% per page</source>
+        <target>每页显示%1%遍</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>View Latest</source>
+        <target>最新日记</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>View Oldest First</source>
+        <target>最早日记</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Older</source>
+        <target>之前</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Newer</source>
+        <target>之后</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>No. %1% - %2%</source>
+        <target>%1%～%2%</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Profile of %1%</source>
+        <target>%1%的资料</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Recently Posted Diaries of All</source>
+        <target>所有人最近的日记</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>My Diaries</source>
+        <target>我的日记</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Previous Diary</source>
+        <target>前一遍</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Next Diary</source>
+        <target>后一遍</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Delete the comment</source>
+        <target>删除评论</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Do you really delete this comment?</source>
+        <target>确认删除评论？</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Go back to the diary page</source>
+        <target>返回日记页面</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>The comment was deleted successfully.</source>
+        <target>评论已删除。</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Delete the diary</source>
+        <target>删除日记</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Do you really delete this diary?</source>
+        <target>确认删除日记？</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Diary Search</source>
+        <target>搜索日记</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Search Results</source>
+        <target>搜索结果</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Your search "%1%" did not match any diaries.</source>
+        <target>没有找到关于「%1%」的日记。</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Diary Comment History</source>
+        <target>评论历史记录</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>remove the current photo</source>
+        <target>删除当前图片</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Diary List</source>
+        <target>日记列表</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Diary Comment List</source>
+        <target>日记评论列表</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Diary</source>
+        <target>日記</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>There are no diary comments.</source>
+        <target>没有日记评论。</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Diary Configuration</source>
+        <target>日记配置</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Default public flag for your new diaries. Past diaries are not changed.</source>
+        <target>默认新日记公开范围，已发布的日记不做修改。</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Body is required.</source>
+        <target>正文必填。</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Diary ID</source>
+        <target>日记ID</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Your search "%1%" did not match any diary comments.</source>
+        <target>没有找到关于「%1%」的日记评论。</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Your comment is visible to all users on the Web.</source>
+        <target>你的评论所有人可见。</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>[Diary] %1%</source>
+        <target>[日记] %1%</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Read comment</source>
+        <target>查看评论</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Please input 0 or greater.</source>
+        <target>请输入0以上。</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>Cancel</source>
+        <target>取消</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>less than 5 seconds ago</source>
+        <target>5秒以内</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>less than 10 seconds ago</source>
+        <target>10秒以内</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>less than 20 seconds ago</source>
+        <target>20秒以内</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>half a minute ago</source>
+        <target>30秒以内</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>less than a minute ago</source>
+        <target>1分钟以内</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>1 minute ago</source>
+        <target>1分钟前</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>%minutes% minutes ago</source>
+        <target>%minutes%分前</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>about 1 hour ago</source>
+        <target>1時間前</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>about %hours% hours ago</source>
+        <target>%hours%時間前</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>1 day ago</source>
+        <target>1日前</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>%days% days ago</source>
+        <target>%days%日前</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>about 1 month ago</source>
+        <target>1个月前</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>%months% months ago</source>
+        <target>%months%个月前</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>about 1 year ago</source>
+        <target>1年前</target>
+      </trans-unit>
+      <trans-unit id="">
+        <source>over %years% years ago</source>
+        <target>%years%年以前</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
