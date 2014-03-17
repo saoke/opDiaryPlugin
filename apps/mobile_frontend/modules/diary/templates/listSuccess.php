@@ -2,12 +2,12 @@
 if (!isset($keyword))
 {
   $title = __('Recently Posted Diaries');
-  $pagerLink = 'diary/list?page=%d';
+  $pagerLink = '@diary_list?page=%d';
 }
 else
 {
   $title = __('Search Results');
-  $pagerLink = 'diary/search?keyword='.mb_convert_encoding($keyword, 'SJIS-win', 'UTF-8').'&page=%d';
+  $pagerLink = '@diary_search?keyword='.mb_convert_encoding($keyword, 'SJIS-win', 'UTF-8').'&page=%d';
 }
 ?>
 <?php op_mobile_page_title($title) ?>
@@ -16,7 +16,7 @@ else
 <?php if ($pager->getNbResults()): ?>
 
 <center>
-<?php echo pager_total($pager); ?>
+<?php op_include_pager_total($pager); ?>
 </center>
 <?php
 $list = array();
@@ -33,7 +33,7 @@ $options = array(
 );
 op_include_list('diaryList', $list, $options);
 ?>
-<?php echo op_include_pager_navigation($pager, $pagerLink, array('is_total' => false)) ?>
+<?php op_include_pager_navigation($pager, $pagerLink, array('is_total' => false)) ?>
 
 <?php else: ?>
 
@@ -41,6 +41,7 @@ op_include_list('diaryList', $list, $options);
 
 <?php endif; ?>
 
+<?php if ($isSearchEnable): ?>
 <?php slot('diarySearchForm') ?>
 <form action="<?php echo url_for('@diary_search') ?>">
 <input type="text" name="keyword" value="<?php if (isset($keyword)) echo $keyword ?>">
@@ -53,3 +54,4 @@ $options = array(
 );
 op_include_box('diarySearchForm', get_slot('diarySearchForm'), $options)
 ?>
+<?php endif; ?>

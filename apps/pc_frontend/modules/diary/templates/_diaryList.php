@@ -7,13 +7,14 @@
 
 <ul class="articleList">
 <?php foreach ($diaryList as $diary): ?>
-<li><span class="date"><?php echo op_format_date($diary->created_at, 'XShortDateJa') ?></span><?php echo op_diary_link_to_show($diary) ?></li>
+<li><span class="date"><?php echo op_format_date($diary->created_at, 'XShortDateJa') ?></span><?php echo op_diary_link_to_show($diary) ?>
+</li>
 <?php endforeach; ?>
 </ul>
 
 <div class="moreInfo">
 <ul class="moreInfo">
-<li><?php echo link_to(__('More'), 'diary/list') ?></li>
+<li><?php echo link_to(__('More'), '@diary_list') ?></li>
 </ul>
 </div>
 

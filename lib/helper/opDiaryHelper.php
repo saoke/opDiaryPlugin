@@ -58,3 +58,72 @@ function op_diary_url_for_show($diary)
 
   return $internalUri;
 }
+
+function emojicode_to_image($matches)
+{
+  $emoji = new OpenPNE_KtaiEmoji_Img();
+  return $emoji->get_emoji4emoji_code_id($matches[1]);
+}
+
+function op_api_diary_convert_emoji($str)
+{
+    $pattern = '/\[([ies]:[0-9]{1,3})\]/';
+    return preg_replace_callback($pattern, 'emojicode_to_image', $str);
+}
+
+function op_api_diary($diary)
+{
+  if($diary)
+  {
+    $body = preg_replace(array('/&lt;op:.*?&gt;/', '/&lt;\/op:.*?&gt;/'), '', $diary->getBody());
+    $body = preg_replace('/http.:\/\/maps\.google\.co[[:graph:]]*/', '', $body);
+    $bodyShort = op_truncate($body, 60);
+    $body = op_auto_link_text($body);
+    return array(
+      'id'          => $diary->getId(),
+      'member'      => op_api_member($diary->getMember()),
+      'title'       => $diary->getTitle(),
+      'body'        => nl2br(op_api_diary_convert_emoji($body)),
+      'body_short'  => nl2br(op_api_diary_convert_emoji($bodyShort)),
+      'public_flag' => $diary->getPublicFlag(),
+      'ago'         => op_format_activity_time(strtotime($diary->getCreatedAt())),
+      'created_at'  => $diary->getCreatedAt(),
+    );
+  }
+}
+
+function op_api_diary_image($image)
+{
+  if($image)
+  {
+    return array(
+      'filename' => sf_image_path($image->getFile()->getName()),
+      'imagetag' => image_tag_sf_image($image->getFile()->getName(), array('size' => '120x120'))
+    );
+  }
+}
+
+function op_api_diary_comment($comment)
+{
+  if($comment)
+  {
+    $images = array();
+    if ($comment->getHasImages())
+    {
+      foreach($comment->getDiaryCommentImages() as $image)
+      {
+        $images[] = op_api_diary_image($image);
+      }
+    }
+    return array(
+      'id'         => $comment->getId(),
+      'diary_id'   => $comment->getDiaryId(),
+      'number'     => $comment->getNumber(),
+      'member'     => op_api_member($comment->getMember()),
+      'body'       => nl2br($comment->getBody()),
+      'ago'        => op_format_activity_time(strtotime($comment->getCreatedAt())),
+      'created_at' => $comment->getCreatedAt(),
+      'images'     => $images
+    );
+  }
+}

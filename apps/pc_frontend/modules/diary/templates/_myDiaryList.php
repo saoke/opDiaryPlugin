@@ -7,7 +7,8 @@
 <?php if (count($diaryList)): ?>
 <ul class="articleList">
 <?php foreach ($diaryList as $diary): ?>
-<li><span class="date"><?php echo op_format_date($diary->created_at, 'XShortDateJa') ?></span><?php echo op_diary_link_to_show($diary, false) ?></li>
+<li><span class="date"><?php echo op_format_date($diary->created_at, 'XShortDateJa') ?></span><?php echo op_diary_link_to_show($diary, false) ?>
+</li>
 <?php endforeach; ?>
 </ul>
 <?php endif; ?>

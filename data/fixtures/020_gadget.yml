@@ -48,3 +48,8 @@ Gadget:
     type: "mobileProfileContents"
     name: "diaryMemberList"
     sort_order: 101
+
+  smartphone_diary_member:
+    type: "smartphoneProfileContents"
+    name: "smtDiaryMember"
+    sort_order: 300

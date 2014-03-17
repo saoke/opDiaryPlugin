@@ -1,5 +1,6 @@
 <?php use_helper('opDiary'); ?>
 
+<?php if ($isSearchEnable): ?>
 <div id="diarySearchFormLine" class="parts searchFormLine">
 <form action="<?php echo url_for('@diary_search') ?>" method="get">
 <p class="form">
@@ -8,23 +9,24 @@
 </p>
 </form>
 </div>
+<?php endif; ?>
 
 <?php
 if (!isset($keyword))
 {
   $title = __('Recently Posted Diaries');
-  $pagerLink = 'diary/list?page=%d';
+  $pagerLink = '@diary_list?page=%d';
 }
 else
 {
   $title = __('Search Results');
-  $pagerLink = 'diary/search?keyword='.$keyword.'&page=%d';
+  $pagerLink = '@diary_search?keyword='.$keyword.'&page=%d';
 }
 ?>
 <?php if ($pager->getNbResults()): ?>
 <div class="dparts searchResultList"><div class="parts">
 <div class="partsHeading"><h3><?php echo $title ?></h3></div>
-<?php echo op_include_pager_navigation($pager, $pagerLink); ?>
+<?php op_include_pager_navigation($pager, $pagerLink); ?>
 <div class="block">
 <?php foreach ($pager->getResults() as $diary): ?>
 <div class="ditem"><div class="item"><table><tbody><tr>
@@ -39,7 +41,7 @@ else
 </tr></tbody></table></div></div>
 <?php endforeach; ?>
 </div>
-<?php echo op_include_pager_navigation($pager, $pagerLink); ?>
+<?php op_include_pager_navigation($pager, $pagerLink); ?>
 </div></div>
 <?php else: ?>
 <?php op_include_box('diaryList', (!isset($keyword)) ? __('There are no diaries.') : __('Your search "%1%" did not match any diaries.', array('%1%' => $keyword)), array('title' => $title)) ?>

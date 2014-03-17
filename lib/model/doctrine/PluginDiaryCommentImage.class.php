@@ -16,7 +16,7 @@
  */
 abstract class PluginDiaryCommentImage extends BaseDiaryCommentImage
 {
-  public function preSave($event)
+  public function preInsert($event)
   {
     $this->setFileNamePrefix();
   }
@@ -35,9 +35,8 @@ abstract class PluginDiaryCommentImage extends BaseDiaryCommentImage
     $file->setName($prefix.$file->name);
   }
 
-  public function preDelete($event)
+  public function postDelete($event)
   {
-    $this->File->FileBin->delete();
     $this->File->delete();
   }
 }

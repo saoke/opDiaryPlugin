@@ -1,2 +1,9 @@
 all:
   stylesheets: [/opDiaryPlugin/css/diary]
+
+smtListSuccess:
+  layout: smtLayoutSns
+
+smtShowSuccess:
+  layout: smtLayoutMember
+

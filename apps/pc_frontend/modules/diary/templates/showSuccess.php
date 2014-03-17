@@ -8,13 +8,13 @@
 <div class="partsHeading"><h3><?php echo __('Diary of %1%', array('%1%' => $member->name)) ?></h3>
 <p class="public">(<?php echo $diary->getPublicFlagLabel() ?>)</p></div>
 
-<?php if ($diary->getPrevious($sf_user->getMemberId()) || $diary->getNext($sf_user->getMemberId())): ?>
+<?php if ($diary->getPrevious($myMemberId) || $diary->getNext($myMemberId)): ?>
 <div class="block prevNextLinkLine">
-<?php if ($diary->getPrevious($sf_user->getMemberId())): ?>
-<p class="prev"><?php echo link_to(__('Previous Diary'), 'diary_show', $diary->getPrevious($sf_user->getMemberId())) ?></p>
+<?php if ($diary->getPrevious($myMemberId)): ?>
+<p class="prev"><?php echo link_to(__('Previous Diary'), 'diary_show', $diary->getPrevious($myMemberId)) ?></p>
 <?php endif; ?>
-<?php if ($diary->getNext($sf_user->getMemberId())): ?>
-<p class="next"><?php echo link_to(__('Next Diary'), 'diary_show', $diary->getNext($sf_user->getMemberId())) ?></p>
+<?php if ($diary->getNext($myMemberId)): ?>
+<p class="next"><?php echo link_to(__('Next Diary'), 'diary_show', $diary->getNext($myMemberId)) ?></p>
 <?php endif; ?>
 </div>
 <?php endif; ?>
@@ -36,9 +36,20 @@
 <?php endif; ?>
 <?php echo op_url_cmd(op_decoration(nl2br($diary->body))) ?>
 </div>
+<!--Like Plugin -->
+<div class="like" style="display: none;">
+<span class="like-wrapper" data-like-id="<?php echo $diary->getId() ?>" data-like-target="D" member-id="<?php echo $diary->member_id ?>">
+<span class="like-post">いいね！</span>
+<span class="like-cancel">いいね！を取り消す&nbsp;</span>
+<span class="like-you">あなたが「いいね！」と言っています。</span><br />
+<a class="like-list" href="#likeModal" data-toggle="modal"></a>
+<div class="like-list-member"></div>
+<span class="like-friend-list"></span>
+</span>
+</div>
 </dd>
 </dl>
-<?php if ($diary->member_id === $sf_user->getMemberId()): ?>
+<?php if ($diary->member_id === $myMemberId): ?>
 <div class="operation">
 <form action="<?php echo url_for('diary_edit', $diary) ?>">
 <ul class="moreInfo button">
@@ -52,19 +63,18 @@
 
 <?php include_component('diaryComment', 'list', array('diary' => $diary)) ?>
 
-<?php if ($sf_user->getMemberId()): ?>
+<?php if ($myMemberId): ?>
 <?php
 $form->getWidget('body')->setAttribute('rows', 8);
 $form->getWidget('body')->setAttribute('cols', 40);
 
-$title = __('Post a diary comment');
-$options = array(
-  'form' => $form,
-  'url' => '@diary_comment_create?id='.$diary->id,
+op_include_form('formDiaryComment', $form, array(
+  'title' => __('Post a diary comment'),
+  'url' => url_for('@diary_comment_create?id='.$diary->id),
   'button' => __('Save'),
   'isMultipart' => true,
-);
-include_box('formDiaryComment', $title, '', $options);
+  'body' => $diary->is_open ? __('Your comment is visible to all users on the Web.') : null,
+));
 ?>
 <?php endif; ?>
 

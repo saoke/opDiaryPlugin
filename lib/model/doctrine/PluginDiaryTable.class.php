@@ -30,7 +30,8 @@ abstract class PluginDiaryTable extends Doctrine_Table
 
   public function getPublicFlags()
   {
-    if (!sfConfig::get('app_op_diary_plugin_is_open', true))
+    if (!Doctrine::getTable('SnsConfig')->get('op_diary_plugin_use_open_diary', true)
+        || !sfConfig::get('app_op_diary_plugin_is_open', true))
     {
       unset(self::$publicFlags[self::PUBLIC_FLAG_OPEN]);
     }
@@ -72,10 +73,21 @@ abstract class PluginDiaryTable extends Doctrine_Table
   public function getDiarySearchPager($keywords, $page = 1, $size = 20, $publicFlag = self::PUBLIC_FLAG_SNS)
   {
     $q = $this->getOrderdQuery();
+
+    if ('pc_backend' !== sfConfig::get('sf_app') && Doctrine::getTable('SnsConfig')->get('op_diary_plugin_search_period_enable'))
+    {
+      $lower = date('Y-m-d 00:00:00', strtotime('-'.Doctrine::getTable('SnsConfig')->get('op_diary_plugin_search_period', '30').' days'));
+      $q->where('created_at >= ?', $lower);
+    }
+
     $this->addPublicFlagQuery($q, $publicFlag);
     $this->addSearchKeywordQuery($q, $keywords);
 
-    return $this->getPager($q, $page, $size);
+    $pager = new opNonCountQueryPager('Diary', $size);
+    $pager->setQuery($q);
+    $pager->setPage($page);
+
+    return $pager;
   }
 
   public function getMemberDiaryList($memberId, $limit = 5, $myMemberId = null)
@@ -277,7 +289,22 @@ abstract class PluginDiaryTable extends Doctrine_Table
   {
     foreach ($keywords as $keyword)
     {
+      if (method_exists($q, 'escapePattern'))
+      {
+        $keyword = $q->escapePattern($keyword);
+      }
+
       $q->andWhere('title LIKE ? OR body LIKE ?', array('%'.$keyword.'%', '%'.$keyword.'%'));
     }
+  }
+
+  public function hasOpenDiary($memberId)
+  {
+    return (bool)$this->createQuery()
+      ->select('id')
+      ->andWhere('member_id = ?', $memberId)
+      ->andWhere('is_open = 1')
+      ->limit(1)
+      ->execute(array(), Doctrine::HYDRATE_NONE);
   }
 }

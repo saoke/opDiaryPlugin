@@ -26,11 +26,34 @@ abstract class PluginDiaryComment extends BaseDiaryComment
 
   public function postSave($event)
   {
+    $fromMember = Doctrine::getTable('Member')->findOneById($this->member_id);
+
     if ($this->member_id !== $this->Diary->member_id)
     {
       Doctrine::getTable('DiaryCommentUnread')->register($this->Diary);
       Doctrine::getTable('DiaryCommentUpdate')->update($this->Diary, $this->Member);
+
+      opDiaryPluginUtil::sendNotification($fromMember, $this->Diary->getMember(), $this->Diary->getId());
     }
+
+    //同じ日記エントリにコメントをしている人に通知を飛ばす
+    $comments = $this->Diary->getDiaryComments();
+    $toMembers = array();
+    foreach($comments as $comment)
+    {
+      if(false == array_key_exists($comment->getMemberId(), $toMembers)
+        && $comment->getMemberId() !== $this->Diary->member_id
+        && $comment->getMemberId() !== $this->member_id
+      )
+      {
+        $toMembers[$comment->getMemberId()] = $comment->getMember();
+      }
+    }
+    foreach($toMembers as $toMember)
+    {
+      opDiaryPluginUtil::sendNotification($fromMember, $toMember, $this->Diary->getId());
+    }
+
   }
 
   public function isDeletable($memberId)

@@ -2,9 +2,14 @@
 op_mobile_page_title(__('Post a diary'));
 ?>
 
-<?php if ('example.com' !== sfConfig::get('op_mail_domain')): ?>
-[i:106]<?php echo op_mail_to('mail_diary_create', array(), __('Post from E-mail')) ?><br>
+<?php if (Doctrine::getTable('SnsConfig')->get('op_diary_plugin_use_email_post', true)): ?>
+<?php if ($member->getConfig('mobile_address')): ?>
+[i:106]<?php echo op_mail_to('mail_diary_create', array(), __('Post via E-mail')) ?><br>
 <?php echo __('You can attach photo files to e-mail.') ?><br>
+<?php else: ?>
+<?php echo __('To attach a photo file, please register your mobile address.') ?>
+(<?php echo link_to(__('Mobile E-mail Address Configuration'), 'member_config', array('category' => 'mobileAddress')) ?>)<br>
+<?php endif; ?>
 <?php endif; ?>
 
 <?php

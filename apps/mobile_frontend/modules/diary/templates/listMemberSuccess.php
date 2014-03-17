@@ -4,7 +4,7 @@
 <?php if ($pager->getNbResults()): ?>
 
 <center>
-<?php echo pager_total($pager); ?>
+<?php op_include_pager_total($pager); ?>
 </center>
 <?php
 $list = array();
@@ -20,7 +20,7 @@ $options = array(
 );
 op_include_list('diaryList', $list, $options);
 ?>
-<?php echo op_include_pager_navigation($pager, 'diary/listMember?page=%d&id='.$member->id, array('is_total' => false)) ?>
+<?php op_include_pager_navigation($pager, '@diary_list_member?page=%d&id='.$member->id, array('is_total' => false)) ?>
 
 <?php else: ?>
 
@@ -30,4 +30,6 @@ op_include_list('diaryList', $list, $options);
 
 <?php if ($sf_user->getMemberId() === $member->id): ?>
 <?php echo link_to(__('Post a diary'), 'diary_new') ?>
+<?php else: ?>
+<?php echo link_to(__('Profile of %1%', array('%1%' => $member->getName())), '@obj_member_profile?id='.$member->getId()) ?>
 <?php endif; ?>

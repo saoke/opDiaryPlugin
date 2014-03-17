@@ -44,3 +44,31 @@ Navigation:
         caption: "Recently Posted Diaries"
       ja_JP:
         caption: "最新日記"
+
+  smartphone_diary_new:
+    type: "smartphone_default"
+    uri: "@diary_new"
+    sort_order: 34
+    Translation:
+      en:
+        caption: "Post a Diary"
+      ja_JP:
+        caption: "日記を書く"
+  smartphone_diary_list:
+    type: "smartphone_default"
+    uri: "@diary_list"
+    sort_order: 35
+    Translation:
+      en:
+        caption: "Recently Posted Diaries"
+      ja_JP:
+        caption: "最新日記"
+  smartphone_diary_list_min:
+    type: "smartphone_default"
+    uri: "@diary_list_mine"
+    sort_order: 36
+    Translation:
+      en:
+        caption: "Diary"
+      ja_JP:
+        caption: "自分の日記"

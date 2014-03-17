@@ -16,11 +16,9 @@
  */
 abstract class PluginDiaryImage extends BaseDiaryImage
 {
-  public function save(Doctrine_Connection $conn = null)
+  public function preInsert($event)
   {
     $this->setFileNamePrefix();
-
-    return parent::save($conn);
   }
 
   protected function setFileNamePrefix()
@@ -33,7 +31,6 @@ abstract class PluginDiaryImage extends BaseDiaryImage
 
   public function postDelete($event)
   {
-    $this->File->FileBin->delete();
     $this->File->delete();
   }
 }
