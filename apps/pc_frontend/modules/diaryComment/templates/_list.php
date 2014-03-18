@@ -58,9 +58,9 @@
 <!--Like Plugin -->
 <div class="like" style="display: none;">
 <span class="like-wrapper" data-like-id="<?php echo $comment->getId() ?>" data-like-target="d" member-id="<?php echo $comment->member_id ?>">
-<span class="like-post">いいね！</span>
-<span class="like-cancel">いいね！を取り消す&nbsp;</span>
-<span class="like-you">あなたが「いいね！」と言っています。</span><br />
+<span class="like-post">赞</span>
+<span class="like-cancel">取消赞&nbsp;</span>
+<span class="like-you">已赞。</span><br />
 <a class="like-list" href="#likeModal" data-toggle="modal"></a>
 <div class="like-list-member"></div>
 <span class="like-friend-list"></span>

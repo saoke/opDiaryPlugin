@@ -39,9 +39,9 @@
 <!--Like Plugin -->
 <div class="like" style="display: none;">
 <span class="like-wrapper" data-like-id="<?php echo $diary->getId() ?>" data-like-target="D" member-id="<?php echo $diary->member_id ?>">
-<span class="like-post">いいね！</span>
-<span class="like-cancel">いいね！を取り消す&nbsp;</span>
-<span class="like-you">あなたが「いいね！」と言っています。</span><br />
+<span class="like-post">赞</span>
+<span class="like-cancel">取消赞&nbsp;</span>
+<span class="like-you">已赞。</span><br />
 <a class="like-list" href="#likeModal" data-toggle="modal"></a>
 <div class="like-list-member"></div>
 <span class="like-friend-list"></span>
